@@ -1,6 +1,6 @@
 # Distributed Systems: what and why?
 
-![definition](figure/lecture01/1.png)
+![definition](figure/lecture01/1.jpeg)
 
 The first question of distributed system is **what is a distributed system? **.
 
@@ -11,7 +11,7 @@ By the definition of martin kleppmann (author of the famous book DDIA, Designing
 
 partial failure means "some parts may be broken, others are ok".
 
-![partial-failure](figure/lecture01/2.png)
+![partial-failure](figure/lecture01/2.jpeg)
 
 There are two philosophies to think about partial failure: the **cloud computing** philosophy and the **high performance computing (hpc)**  philosophy.
 
@@ -20,7 +20,7 @@ There are two philosophies to think about partial failure: the **cloud computing
 - hpc treat partial failure as **total failure**, when something went wrong, we re-start the whole computing
   - we can use **checkpoint** to cope with failure. When the computing fails, we re-start at the newest checkpoint.
 
-![failure](figure/lecture01/3.png)
+![failure](figure/lecture01/3.jpeg)
 
 **Can we distinguish different kinds of failure?** Unfortunately, we can not.
 
@@ -36,7 +36,7 @@ As the figure shows, there are two machine taling about each other (just igonre 
 - Response from *M2* is lost
 - "Corrupt transmission", Byzantine Faults (for example, malicious one send wrong message)
 
-In the view of ***M2***, it can **not distinguish** which kind of the failure is. ![timeout](figure/lecture01/4.png)
+In the view of ***M2***, it can **not distinguish** which kind of the failure is. ![timeout](figure/lecture01/4.jpeg)
 
 If you send a request to another node and don't receive a response, it it **impossible** for you to know why!
 
@@ -44,7 +44,7 @@ And how do real systems try to cope with this ? With **timeout**, which means yo
 
 For one reason, if the request is not just "query" or read a value, but want to do something, say change the variable, we call this things have a "side effect". For example, *M1* now wants to increase the *x* stored in *M2*. *M1* send the request,  but gets no response, *M1* has no idea wether the *x* is increased. 
 
-![advantages](figure/lecture01/5.png)
+![advantages](figure/lecture01/5.jpeg)
 
 For another reason, how long should the timeout be set ?  
 
