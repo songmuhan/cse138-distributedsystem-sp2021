@@ -1,8 +1,8 @@
-# Distributed Systems: what and why?
+# Distributed Systems: What and Why?
 
 ![definition](figure/lecture01/1.jpeg)
 
-The first question of distributed system is **what is a distributed system? **.
+The first question of distributed system is **what is a distributed system?**.
 
 By the definition of martin kleppmann (author of the famous book DDIA, Designing Data-Intensive Applications), **A distributed system is**
 
@@ -52,7 +52,7 @@ Say we have a "perfect" network which ensures the request must arrive the receiv
 
 But most of the time, we have no guarantee, we can't really do this. And palvaro characterizes distributed system as partial failure and unbounded latency. 
 
-And there is the last question, **Why deal with all this pain ? **In other word, what can we get from distributed system?
+And there is the last question, **Why deal with all this pain ?**In other word, what can we get from distributed system?
 
 - we want to make things faster
   - we have more computers, there is more potential parallisim we can take advantage of
@@ -61,4 +61,4 @@ And there is the last question, **Why deal with all this pain ? **In other word,
 -  reliability
   - the datacenter save serval copies of your data to ensure they are not lost when failure occurs.
 - throughput 
-  - more well-structured computers can gives higher throughput. You can use different machines to cope with requests from different place.
+  - more well-structured computers can gives higher throughput. You can use different machines to cope with requests from different places.

@@ -1,4 +1,4 @@
 # Summary
 * [README](README.md)
 ### Lectures
-* [Lecture 01](lecture01.md)
+* [Distributed Systems: What and Why?](lecture01.md)
