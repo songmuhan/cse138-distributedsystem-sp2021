@@ -21,7 +21,7 @@ For the first one,  consider the question: **what do we use clocks for ?**
 - Scheduling, we use clock to **mark points in time** , i.e. "This class starts at 3:20pm PT", "This item in my browser cache expires on April 1, 2021 at 8pm PT", or "This error message in errors.txt has a timestamp of on April 1, 2021"
 - **Durations / Intervals of time**, we use clock to measure how long will something take, i.e. "This class is 95 minutes long", "This request will time out in 5 seconds"
 
-![type of clock](figure/lecture02/type of clock.jpeg)
+![type of clock](figure/lecture02/typeofclock.jpeg)
 
 We have two kinds of clock for each usage, the **time-of-day clocks** and the **monotonic clocks**
 
@@ -45,7 +45,7 @@ the **monotonic clocks**:
   # the return value depends to the uesr's machine
   ```
 
-![physical clocks](figure/lecture02/physical clocks.jpeg)
+![type of clock](figure/lecture02/physicalclocks.jpeg)
 
 These two kinds of clocks are both we called **physical clocks**
 
@@ -60,18 +60,18 @@ For example, *M1* and *M2* both have a variable *x* , with the value of 5. In 3p
 
 ## Logic Clock, Happens-before
 
-![logic clock](figure/lecture02/logic clock.jpeg)
+![logic clock](figure/lecture02/logicclock.jpeg)
 
 Instead of using physical clock, we are going to introduce the **logic clocks**, which only measure the order of events.
 
-First we define a notation: A $$\rightarrow$$ B, pronounced as A happened before B, where A and B are arbitrary events.
+First we define a notation: A$$\rightarrow$$B, pronounced as A happened before B, where A and B are arbitrary events.
 
-What does A $$\rightarrow$$ B tell us about **causality**? 
+What does A$$\rightarrow$$B tell us about **causality**? 
 
 - A could have caused B, maybe or maybe not, we don't know,
 - But we know that B **could not** have caused A
 
-![lamport diagram](figure/lecture02/lamport diagram.jpeg)
+![lamport diagram](figure/lecture02/lamportdiagram.jpeg)
 
  And we use a new way to draw the picture, which is called **Lamport diagrams** .
 
@@ -96,7 +96,7 @@ Alice says "Bob smells", and Bob responses with "Fuck you Alice!". But due to th
 
 ## Network Model
 
-![network model](figure/lecture02/network model.jpeg)
+![network model](figure/lecture02/networkmodel.jpeg)
 
 Next we are going to introduce the network models.
 
@@ -108,7 +108,7 @@ synchronous network do exist, but **in reality we deal with asynchronous network
 
 ## State and Events
 
-![state and event](figure/lecture02/state and event.jpeg)
+![state and event](figure/lecture02/stateandevent.jpeg)
 
 State is like the the varible of *x*, or some machine state we care about. Event is the dot in lamport diagram.
 
