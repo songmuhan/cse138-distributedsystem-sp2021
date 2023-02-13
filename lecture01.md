@@ -2,7 +2,7 @@
 
 ![definition](figure/lecture01/1.jpeg)
 
-The first question of distributed system is **what is a distributed system?**.
+The first question of distributed system is **what is a distributed system?**
 
 By the definition of martin kleppmann (author of the famous book DDIA, Designing Data-Intensive Applications), **A distributed system is**
 
@@ -36,7 +36,9 @@ As the figure shows, there are two machine taling about each other (just igonre 
 - Response from *M2* is lost
 - "Corrupt transmission", Byzantine Faults (for example, malicious one send wrong message)
 
-In the view of ***M2***, it can **not distinguish** which kind of the failure is. ![timeout](figure/lecture01/4.jpeg)
+In the view of ***M2***, it can **not distinguish** which kind of the failure is. 
+
+![timeout](figure/lecture01/4.jpeg)
 
 If you send a request to another node and don't receive a response, it it **impossible** for you to know why!
 
@@ -48,11 +50,11 @@ For one reason, if the request is not just "query" or read a value, but want to 
 
 For another reason, how long should the timeout be set ?  
 
-Say we have a "perfect" network which ensures the request must arrive the receiver in *d* time. And luckily the receiver processes the message in *r* time. Then we can safely set the timeout to be *2d + r*. Whenever request timesout, we believe the receiver is crashed.
+Say we have a "perfect" network which ensures the request must arrive the receiver in *d* time. And luckily the receiver processes the message in *r* time. Then we can safely set the timeout to be *2d + r*. Whenever request times out, we believe the receiver is crashed.
 
 But most of the time, we have no guarantee, we can't really do this. And palvaro characterizes distributed system as partial failure and unbounded latency. 
 
-And there is the last question, **Why deal with all this pain ?**In other word, what can we get from distributed system?
+And there is the last question, **Why deal with all this pain?** In other word, what can we get from distributed system?
 
 - we want to make things faster
   - we have more computers, there is more potential parallisim we can take advantage of
