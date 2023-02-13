@@ -1,8 +1,8 @@
-# Time&Clocks, Network Model, Causality ,State & Events
+# Time&Clocks,Network Model,Causality,State & Events
 
 ## Agenda
 
-![agenda](/Users/songmuhan/gitbook/cse138-ucsc-sp21/figure/lecture02/agenda.jpeg)
+![agenda](figure/lecture02/agenda.jpeg)
 
 Today we going to talk about the following topics:
 
@@ -14,14 +14,14 @@ Today we going to talk about the following topics:
 
 ## Clock
 
-![usage of clock](/Users/songmuhan/gitbook/cse138-ucsc-sp21/figure/lecture02/clocks.jpeg)
+![usage of clock](figure/lecture02/clocks.jpeg)
 
 For the first one,  consider the question: **what do we use clocks for ?** 
 
 - Scheduling, we use clock to **mark points in time** , i.e. "This class starts at 3:20pm PT", "This item in my browser cache expires on April 1, 2021 at 8pm PT", or "This error message in errors.txt has a timestamp of on April 1, 2021"
 - **Durations / Intervals of time**, we use clock to measure how long will something take, i.e. "This class is 95 minutes long", "This request will time out in 5 seconds"
 
-![type of clock](/Users/songmuhan/gitbook/cse138-ucsc-sp21/figure/lecture02/type of clock.jpeg)
+![type of clock](figure/lecture02/type of clock.jpeg)
 
 We have two kinds of clock for each usage, the **time-of-day clocks** and the **monotonic clocks**
 
@@ -45,7 +45,7 @@ the **monotonic clocks**:
   # the return value depends to the uesr's machine
   ```
 
-![physical clocks](/Users/songmuhan/gitbook/cse138-ucsc-sp21/figure/lecture02/physical clocks.jpeg)
+![physical clocks](figure/lecture02/physical clocks.jpeg)
 
 These two kinds of clocks are both we called **physical clocks**
 
@@ -56,24 +56,22 @@ These two kinds of clocks are both we called **physical clocks**
 
 for time-of-day clocks, it's bad to measure the duration of time. Unfortunately it is also not well to measure the points in time, because there is no perfect approach to exactly synchronize the time of different machines. NTP is not perfect. 
 
->NTP todo
-
 For example, *M1* and *M2* both have a variable *x* , with the value of 5. In 3pm, *M1* send *M2* a request to increase *x*. In *M1* view, before 3pm they both have that *x = 5*. Due to the imperfect time-synchronize approch, they have different "3pm", which makes *M2* has that *x = 6* before 3pm
 
 ## Logic Clock, Happens-before
 
-![logic clock](/Users/songmuhan/gitbook/cse138-ucsc-sp21/figure/lecture02/logic clock.jpeg)
+![logic clock](figure/lecture02/logic clock.jpeg)
 
 Instead of using physical clock, we are going to introduce the **logic clocks**, which only measure the order of events.
 
-First we define a notation: A $\rightarrow$ B, pronounced as A happened before B, where A and B are arbitrary events.
+First we define a notation: A $$\rightarrow$$ B, pronounced as A happened before B, where A and B are arbitrary events.
 
-What does A $\rightarrow$ B tell us about **causality**? 
+What does A $$\rightarrow$$ B tell us about **causality**? 
 
 - A could have caused B, maybe or maybe not, we don't know,
 - But we know that B **could not** have caused A
 
-![lamport diagram](/Users/songmuhan/gitbook/cse138-ucsc-sp21/figure/lecture02/lamport diagram.jpeg)
+![lamport diagram](figure/lecture02/lamport diagram.jpeg)
 
  And we use a new way to draw the picture, which is called **Lamport diagrams** .
 
@@ -81,16 +79,16 @@ The horizontal line represents a process, and time flows from up to bottom. Even
 
 With lamport diagram, we can give a formal definition of happens before:
 
-Given events A and B, we say   A $\rightarrow$ B :
+Given events A and B, we say   A $$\rightarrow$$ B :
 
-- if A and B occur on the same process with A before B, then  A $\rightarrow$ B, e.g. in the lamport diagram,  X $\rightarrow$ Z on *M1*
-- if A is a send event and B is the corresponding receive event, then  A $\rightarrow$ B. e.g, P $\rightarrow$ S , P is the send event of *M2* and S is the receive event of 
+- if A and B occur on the same process with A before B, then  A $$\rightarrow$$ B, e.g. in the lamport diagram,  X $$\rightarrow$$ Z on *M1*
+- if A is a send event and B is the corresponding receive event, then  A $$\rightarrow$$ B. e.g, P $$\rightarrow$$ S , P is the send event of *M2* and S is the receive event of 
 
-- transitive: Given some other event C such that  A $\rightarrow$ C and  C $\rightarrow$ B, then  A $\rightarrow$ B, e.g. S $\rightarrow$ Y and Y $\rightarrow$ Z, we have S $\rightarrow$ Z
+- transitive: Given some other event C such that  A $$\rightarrow$$ C and  C $$\rightarrow$$ B, then  A $$\rightarrow$$ B, e.g. S $$\rightarrow$$ Y and Y $$\rightarrow$$ Z, we have S $$\rightarrow$$ Z
 
-Notes that event R in *M0* and event Z in *M1*, we have no idea which one happens before, which means Z $\not \rightarrow$ R and R $\not \rightarrow$ Z, we say R and Z are **concurrent** . 
+Notes that event R in *M0* and event Z in *M1*, we have no idea which one happens before, which means Z $$\not \rightarrow$$ R and R $$\not \rightarrow$$ Z, we say R and Z are **concurrent** . 
 
-![example](/Users/songmuhan/gitbook/cse138-ucsc-sp21/figure/lecture02/example.jpeg)
+![example](figure/lecture02/example.jpeg)
 
 Why do we need the lamport diagram? There is an example as in the screenshot. 
 
@@ -98,7 +96,7 @@ Alice says "Bob smells", and Bob responses with "Fuck you Alice!". But due to th
 
 ## Network Model
 
-![network model](/Users/songmuhan/gitbook/cse138-ucsc-sp21/figure/lecture02/network model.jpeg)
+![network model](figure/lecture02/network model.jpeg)
 
 Next we are going to introduce the network models.
 
@@ -110,7 +108,7 @@ synchronous network do exist, but **in reality we deal with asynchronous network
 
 ## State and Events
 
-![state and event](/Users/songmuhan/gitbook/cse138-ucsc-sp21/figure/lecture02/state and event.jpeg)
+![state and event](figure/lecture02/state and event.jpeg)
 
 State is like the the varible of *x*, or some machine state we care about. Event is the dot in lamport diagram.
 
